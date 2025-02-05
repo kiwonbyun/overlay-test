@@ -31,7 +31,7 @@ export function useOverlay() {
       );
     },
     close: () => {
-      unmount(id);
+      overlayRef.current?.close();
     },
   };
 }

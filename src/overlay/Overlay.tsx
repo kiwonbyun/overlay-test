@@ -42,6 +42,9 @@ export const Overlay = ({
         onClick={close}
       />
       <div
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
         className={`${styles.container} ${
           isRemoving ? styles.containerExit : styles.containerEnter
         }`}

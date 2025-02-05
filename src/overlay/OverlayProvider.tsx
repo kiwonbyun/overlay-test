@@ -24,7 +24,6 @@ export const useOverlayContext = () => {
 
 export function OverlayProvider({ children }: PropsWithChildren) {
   const [overlay, setOverlay] = useState<Map<string, ReactNode>>(new Map());
-  console.log(overlay);
 
   const mount = useCallback((id: string, element: ReactNode) => {
     setOverlay((overlay) => {
