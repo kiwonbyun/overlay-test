@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <GlobalProviders>
           {children}
-          <div id="overlay"></div>
+          <div id="modal"></div>
         </GlobalProviders>
       </body>
     </html>

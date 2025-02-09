@@ -4,20 +4,20 @@ import React, { Fragment, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styles from "./overlay.module.css";
 
-interface OverlayProps extends HTMLAttributes<HTMLDivElement> {
+interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   isOpen: boolean;
   children: React.ReactNode;
   isRemoving: boolean;
   close?: () => void;
 }
 
-export const Overlay = ({
+export const Modal = ({
   isOpen,
   children,
   close,
   isRemoving,
   ...props
-}: OverlayProps) => {
+}: ModalProps) => {
   const html = document.documentElement;
 
   useEffect(() => {
@@ -30,8 +30,6 @@ export const Overlay = ({
       html.style.setProperty("overflow", "auto");
     };
   }, [isOpen]);
-
-  if (!isOpen) return null;
 
   return createPortal(
     <Fragment>
@@ -53,6 +51,6 @@ export const Overlay = ({
         {children}
       </div>
     </Fragment>,
-    document.getElementById("overlay") as HTMLElement
+    document.getElementById("modal") as HTMLElement
   );
 };

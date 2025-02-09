@@ -6,7 +6,9 @@ export interface OverlayControlRef {
   close: () => void;
 }
 export type CreateOverlayElement = (props: {
+  isOpen: boolean;
   close: () => void;
+  isRemoving: boolean;
 }) => JSX.Element;
 
 let elementId = 1;

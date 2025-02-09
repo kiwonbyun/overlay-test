@@ -8,7 +8,6 @@ import {
 } from "react";
 import { CreateOverlayElement, OverlayControlRef } from "./useOverlay";
 import { useOverlayContext } from "./OverlayProvider";
-import { Overlay } from "./Overlay";
 import useKeyPress from "@/hooks/useKeyPress";
 interface Props {
   overlayContent: CreateOverlayElement;
@@ -44,13 +43,11 @@ export const OverlayController = forwardRef(
     }, []);
 
     return (
-      <Overlay
+      <OverlayContent
         isOpen={isOverlayOpen}
-        close={handleOverlayClose}
         isRemoving={isRemoving}
-      >
-        <OverlayContent close={handleOverlayClose} />
-      </Overlay>
+        close={handleOverlayClose}
+      />
     );
   }
 );
